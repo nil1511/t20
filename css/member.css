@@ -1,0 +1,173 @@
+@CHARSET "UTF-8";
+/******* GENERAL RESET *******/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em,
+font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+ tfoot, thead, tr, th, td {
+	border: 0pt none;
+	/* [disabled]font-family:inherit; */
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0pt;
+	padding: 0pt;
+	vertical-align: baseline;
+}
+#chat {
+	cursor:pointer;
+   	box-shadow: inset 0 0 10px #000;
+	background-color:#0CC;
+	font-family:"Lucida Console", Monaco, monospace;
+	position:fixed;
+	height:2.5em;
+	right: 5px;
+	bottom: 0px;
+	padding: 5px 7px 5px 7px;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+}
+#chat:hover {
+	box-shadow:  0 0 10px #000;
+}
+#chatbox{
+	overflow:scroll;
+	position:fixed;
+	text-align:center;
+	bottom:2px;
+	right:2px;
+	width:150px;
+}
+#user_title{
+	cursor:pointer;
+	background-color:#0CC;
+	box-shadow: inset 0 0 7px #000;
+	color:#030;
+	font-weight:bolder;
+	border-top-left-radius:4px;
+	border-top-right-radius:4px;
+}
+#user_title:hover{
+	box-shadow: 0 0 7px #000;
+}
+#chatblock ,.chat_content{
+	word-wrap:break-word;
+	overflow-y:scroll;
+	overflow-x:hidden;
+}
+.users{
+list-style:none;
+border-radius:5px;
+height:1.3em;
+}
+.users:hover{
+background-color:#9AF;
+}
+li.wait{
+	background:#FF0000;
+}
+.users_div{
+	background-color:#FFF;
+	overflow-y:scroll;
+	overflow-x:hidden;
+	cursor:pointer;
+	max-height:50%;
+	font-family:Tahoma, Geneva, sans-serif;
+}
+.chatboxes{
+position:fixed;
+bottom:-5px;
+}
+.chat_bar{
+	position:relative;
+	top:2px;
+	cursor:pointer;
+	background-image: linear-gradient(right , rgb(230,53,53) 17%, rgb(7,171,70) 41%);
+	background-image: -o-linear-gradient(right , rgb(230,53,53) 17%, rgb(7,171,70) 41%);
+	background-image: -moz-linear-gradient(right , rgb(230,53,53) 17%, rgb(7,171,70) 41%);
+	background-image: -webkit-linear-gradient(right , rgb(230,53,53) 17%, rgb(7,171,70) 41%);
+	background-image: -ms-linear-gradient(right , rgb(230,53,53) 17%, rgb(7,171,70) 41%);
+	background-image: -webkit-gradient(linear,right top,left top,color-stop(0.17, rgb(230,53,53)),color-stop(0.41, rgb(7,171,70)));
+	border-radius:0 5px 0;
+}
+.chat_title{
+	font-weight:bold;
+	padding-left:9px;
+	float:left;
+}
+.chat_title:hover{
+	font-weight:bold;
+	padding: 0 9px 0;
+	background-color:olive;
+	border-color:#3F6;
+	float:left;
+	border-radius:3px;
+}
+.chat_option{
+	padding-right:5px;
+	float:right;
+}
+.chat_option:hover{
+	padding: 0 5px 0;
+	background-color:#FF0;
+}
+.chat_content{
+	display:block;
+	min-height:30px;
+	max-height:230px;
+	width:202px;
+	border:1px solid #C36;
+	border-radius:5 0 0;
+	opacity:60%;
+	overflow-y:scroll;
+	overflow-x:hidden;
+	padding:4px 0;
+}
+.chat_text{
+	min-height:20px;
+	max-height:70px;
+	position:relative;
+	top:-5px;
+	resize:vertical;
+	border:1px solid #C36;
+	width:192px;
+	border-radius:0 0 5px;
+	padding:5px;
+}
+.chat_me{
+	background:#2e88c4;
+	background:-webkit-linear-gradient(#075698, #2e88c4 ,#f9d835);
+	background:-moz-linear-gradient(#075698, #2e88c4 ,#f9d835);
+	background:-o-linear-gradient(#075698, #2e88c4 ,#f9d835);
+	background:linear-gradient(#075698, #2e88c4 ,#f9d835);
+	border-radius:3px 3px 0 0;
+	padding:0 4px;
+	margin-left:0.5em;
+	display:inline;
+	float:left;
+	text-transform:capitalize;
+}
+.chat_other{
+	background:#5a8f00; /* default background for browsers without gradient support */
+	/* css3 */
+	background:-webkit-linear-gradient(#b8db29, #5a8f00 ,#f9d835);
+	background:-moz-linear-gradient(#b8db29, #5a8f00 ,#f9d835);
+	background:-o-linear-gradient(#b8db29, #5a8f00 ,#f9d835);
+	background:linear-gradient(#b8db29, #5a8f00 ,#f9d835);
+	border-radius:3px 3px 0 0;
+	padding:0 4px;
+	margin-right:0.5em;
+	display:inline;
+	float:right;
+	text-transform:capitalize;
+}
+.chat_message{
+	clear:both;
+	width:160px;
+	background:#f3961c; /* default background for browsers without gradient support */
+	/* css3 */
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#f9d835), to(#f3961c));
+	background:-moz-linear-gradient(#f9d835, #f3961c);
+	background:-o-linear-gradient(#f9d835, #f3961c);
+	background:linear-gradient(#f9d835, #f3961c);
+	border-radius:4px;
+	padding:0 0.5em 0 0.5em;  
+}
